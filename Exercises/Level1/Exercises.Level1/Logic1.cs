@@ -19,7 +19,27 @@ public class Logic1
     /// </summary>
     public bool CigarParty(int cigars, bool isWeekend)
     {
-        throw new NotImplementedException();
+        //if (cigars < 40)
+        //{
+        //    return false;
+        //}
+        //if (isWeekend)
+        //{
+        //    return true;
+        //}
+
+        //if (cigars <= 60)
+        //{
+        //    return true;
+        //}
+
+        if (cigars >= 40 && (isWeekend || cigars <= 60))
+        {
+            return true;
+        }
+
+            return false;
+
     }
 
     /// <summary>
@@ -36,7 +56,24 @@ public class Logic1
     /// </summary>
     public int DateFashion(int you, int date)
     {
-        throw new NotImplementedException();
+        // 1. Ja kaut viens ir 2 vai mazāk, tad 0
+        if (you <= 2 || date <= 2)
+        {
+            return 0;
+        }
+
+
+        //2. ja kaut viens ir 8 vai vairāk, tad 2 
+
+        if (you >= 8 || date >= 8)
+        {
+            return 2;
+        }
+
+
+        //3. citādi 1
+
+        return 1;
     }
 
     /// <summary>
@@ -51,8 +88,41 @@ public class Logic1
     /// </summary>
     public bool SquirrelPlay(int temp, bool isSummer)
     {
-        throw new NotImplementedException();
+        ////1. ja temp. ir 60 un 90 un nav vasara, tad atgriežam true     
+        //if (temp >=60 && temp <=90 && !isSummer)
+        //{ 
+        //    return true; 
+        //}
+        ////2. ja temp. ir 60 un 100 un ir vasara, tad atgriežam true   
+        //if (temp >= 60 && temp <= 100 && isSummer)
+        //{
+        //    return true;
+        //}
+
+        ////3. Citādi atgriežam false
+        //return false;
+
+        //----------------------Try 2----------------- Short version
+        int maxTemp = 90;
+
+        if (isSummer)
+        {
+            maxTemp += 10;
+
+        }
+
+        if (temp >= 60 && temp <= maxTemp)
+        {
+            return true;
+         
+        }
+     
+            return false;
+        
+
     }
+
+
 
     /// <summary>
     /// You are driving a little too fast, and a police officer stops you. Write code to compute the
