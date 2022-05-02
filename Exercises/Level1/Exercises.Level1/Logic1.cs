@@ -136,8 +136,31 @@ public class Logic1
     /// caughtSpeeding(65, true) → 0
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday)
+
     {
-        throw new NotImplementedException();
+        int speedLim_1 = 60;
+        int speedLim_2 = 80;
+        
+        if (isBirthday)
+        {
+            speedLim_1 += 5;
+            speedLim_2 += 5;
+        }
+
+        if ((speed > speedLim_1) && (speed <= speedLim_2))
+        {
+            return 1;
+
+        }
+
+        if (speed > speedLim_2)
+        {
+            return 2;
+        }
+
+        return 0;
+
+              
     }
 
     /// <summary>
@@ -150,7 +173,14 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int sum = a + b;
+        if ((sum >= 10) && (sum <= 19))
+        {
+            return 20;
+        }
+
+        return sum;
+
     }
 
     /// <summary>
@@ -166,7 +196,25 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+        int workDay_1 = 1;
+        int workDay_2 = 5;
+
+        if (vacation)
+        {
+            if ((day >= workDay_1) && (day <= workDay_2))
+            {
+                return "10:00";
+            }
+            else
+                return "off";
+        }
+
+        if ((day >= workDay_1) && (day <= workDay_2))
+        {
+            return "7:00";
+        }
+
+        return "10:00";
     }
 
     /// <summary>
@@ -180,7 +228,20 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+        int num = a + b;
+        int num2 = Math.Abs(a - b);
+        
+        if ((a == 6) || (b == 6))
+        {
+            return true;
+        }
+
+        if ((num == 6) || (num2 == 6))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>
