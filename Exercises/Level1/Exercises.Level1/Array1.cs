@@ -297,7 +297,26 @@ public class Array1
     /// </summary>
     public bool Has23(int[] nums)
     {
-        throw new NotImplementedException();
+        foreach (int i in nums)
+
+            if ((i == 2) || (i == 3))
+            {
+                return true;
+            }
+
+        return false;
+
+        //for(int i = 0; i < nums.Length; i++)
+        //{
+        //    if(nums[i] == 2 || nums[i] == 3)
+        //    {
+        //        return true;
+        //    }
+
+        //}
+
+        //return false;
+
     }
 
     /// <summary>
