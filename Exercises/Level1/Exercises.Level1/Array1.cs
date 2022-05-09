@@ -19,7 +19,14 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
-        throw new NotImplementedException();
+        int first = nums[0];
+
+        int lastIndex = nums.Length - 1;
+        int last = nums[lastIndex];
+
+        return first == 6 || last == 6;
+
+
     }
 
     /// <summary>
@@ -32,7 +39,22 @@ public class Array1
     /// </summary>
     public bool SameFirstLast(int[] nums)
     {
-        throw new NotImplementedException();
+        // 1. Ja masīva elementu skaits ir mazāks vai vienāds ar 1, tad atgriežam vērtību false
+        
+
+
+        // 2. Ja masīva pirmā un pēdējā vērtība ir vienāda, tad true citādi false
+
+        if (nums.Length == 0)
+        {
+            return false;
+        }
+        int firstElement = nums[0];
+        int lastIndex = nums.Length - 1;
+        int lastElement = nums[lastIndex];
+
+        return firstElement == lastElement;
+
     }
 
     /// <summary>
@@ -42,7 +64,8 @@ public class Array1
     /// </summary>
     public int[] MakePi()
     {
-        throw new NotImplementedException();
+        return new int[] { 3, 1, 4 };
+
     }
 
     /// <summary>
@@ -55,8 +78,31 @@ public class Array1
     /// </summary>
     public bool CommonEnd(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        // 1. Izgūstam abu masīvu pirmos elementus, ja ir vienādi, tad atgriežam true
+
+        // 2. Tas pats ar abu masīvu pēdējiem elementiem
+
+
+        // 3. Citādi false
+        int aFirstElement = a[0];
+        int bFirstElement = b[0];
+
+        if (aFirstElement == bFirstElement)
+        {
+            return true;
+        }
+
+        int aLastIndex = a.Length - 1;
+        int bLastIndex = b.Length - 1;
+
+        int aLastElement = a[aLastIndex];
+        int bLastElement = b[bLastIndex];
+
+        return aLastElement == bLastElement;
+
+
     }
+
 
     /// <summary>
     /// Given an array of ints length 3, return the sum of all the elements.
@@ -67,7 +113,13 @@ public class Array1
     /// </summary>
     public int Sum3(int[] nums)
     {
-        throw new NotImplementedException();
+        int sum = 0; 
+        foreach (int num in nums)
+        {
+            sum = sum + num;
+
+        }
+        return sum;
     }
 
     /// <summary>
@@ -80,7 +132,20 @@ public class Array1
     /// </summary>
     public int[] RotateLeft3(int[] nums)
     {
-        throw new NotImplementedException();
+        int num_1 = nums[0];
+        int num_2 = nums[1];
+        int num_3 = nums[2];
+
+        int[]  newNums = new int[nums.Length];
+
+        newNums[0] = num_2;
+        newNums[1] = num_3;
+        newNums[2] = num_1;
+
+        return newNums;
+
+        
+
     }
 
     /// <summary>
@@ -93,7 +158,23 @@ public class Array1
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
-        throw new NotImplementedException();
+        int num_1 = nums[0];
+        int num_2 = nums[1];
+        int num_3 = nums[2];
+
+        int[] newArray = new int[nums.Length];
+
+        newArray[0] = nums[nums.Length - 1];
+        newArray[1] = num_2;
+        newArray[newArray.Length -1] = nums[0];
+
+        return newArray;
+        //int [] newArray = new int[nums.Length];
+        //for (int i = 0; i < newArray.Length; i++)
+        //{
+        //    newArray[i] = nums[i];
+        //}
+        //return newArray;
     }
 
     /// <summary>
@@ -106,7 +187,16 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
-        throw new NotImplementedException();
+       // noteikt ,kurš ir lielāks masīva skaitlis - 1. vai beidzamais?
+       // 
+       int maxNum = Math.Max(nums[0], nums[nums.Length -1]);
+        // masīva visas vērtības aizstāt ar lielāko skaitli
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = maxNum;
+        }
+        return nums;
     }
 
     /// <summary>
@@ -120,7 +210,32 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        throw new NotImplementedException();
+        //Atgriež 0, ja masīva garums =0
+
+        int arrayLength = nums.Length;
+
+        
+        if (arrayLength > 1)
+        {
+            int a = nums[0];
+            int b = nums[1];
+
+            return (a+b);
+        }
+           
+        if ((0 < arrayLength) && (arrayLength < 2))
+         {
+            return nums[0];
+         }
+
+        return 0;
+
+
+
+        //Ja masīva garums mazāks par 2, tad atgriež to vienīgo skaitli
+
+        // Atgriež masīva pirmo divu elementu summu
+
     }
 
     /// <summary>
@@ -133,7 +248,14 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int[] newMid = new int[2];
+        newMid[0] = a[1];
+        newMid[1] = b[1];
+
+        return newMid;
+
+        //return newMid[a[1], b[1]];  īsā versija
+
     }
 
     /// <summary>
@@ -146,7 +268,24 @@ public class Array1
     /// </summary>
     public int[] MakeEnds(int[] nums)
     {
-        throw new NotImplementedException();
+        int array_L = nums.Length;
+        int[] newEnd = new int[2];
+
+        if(array_L <2)
+        {
+            //newEnd[0] = nums[0];
+            //newEnd[1] = nums[0];
+            
+            //return newEnd;
+            return new int[] { nums[0], nums[0] };
+
+            
+        }
+
+        newEnd[0] = nums[0];
+        newEnd[1] = nums[nums.Length-1];
+        return newEnd;
+
     }
 
     /// <summary>
