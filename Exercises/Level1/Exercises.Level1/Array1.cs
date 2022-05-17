@@ -298,12 +298,13 @@ public class Array1
     public bool Has23(int[] nums)
     {
         foreach (int i in nums)
-
+        {
             if ((i == 2) || (i == 3))
             {
                 return true;
             }
 
+        }
         return false;
 
         //for(int i = 0; i < nums.Length; i++)

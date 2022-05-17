@@ -17,7 +17,19 @@ public class Array2
     /// </summary>
     public int CountEvens(int[] nums)
     {
-        throw new NotImplementedException();
+        int a = 0;
+        // Noteikt Vai masīvā ir pāra skaitlis. Jadalās ar 2 , tad atlikums ir 0.
+        foreach(int num in nums)
+        {
+            if(num % 2 ==0)
+            {
+                a++;
+            }
+            //return a;
+
+        }
+        return a;
+        //Saskaitīt, cik masīvā ir pāra skaitļi
     }
 
     /// <summary>
@@ -31,7 +43,41 @@ public class Array2
     /// </summary>
     public int BigDiff(int[] nums)
     {
-        throw new NotImplementedException();
+
+        //int max = nums[0];
+        //int min = nums[0];
+        //int a=1;
+        //int b = 1;
+
+        //for(int i = 1; i < nums.Length; i++)   
+        //{
+        //    //int max = num;
+        //    max = Math.Max(max, nums[a]);
+        //    a++;
+        //    min = Math.Min(min, nums[b]);
+        //    b++;
+
+        //}
+        // int diff =  max - min;
+        //return diff;
+
+
+        int max = nums[0];
+        int min = nums[0];
+        //int a = 1;
+        //int b = 1;
+
+        foreach(var num in nums)
+        {
+            
+            max = Math.Max(max, num);
+           
+            min = Math.Min(min, num);
+            
+        }
+        int diff = max - min;
+        return diff;
+
     }
 
     /// <summary>
@@ -47,7 +93,30 @@ public class Array2
     /// </summary>
     public int CenteredAverage(int[] nums)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+
+        int max = nums[0];
+        int min = nums[0];
+
+
+        foreach (var num in nums)
+        {
+            sum += num;
+
+            max = Math.Max(max, num);
+
+            min = Math.Min(min, num);
+
+
+        }
+        int sum1 = sum - max - min;
+        int average = sum1 / (nums.Length -2);
+        return average;
+
+
+
+
+        //throw new NotImplementedException();
     }
 
     /// <summary>
